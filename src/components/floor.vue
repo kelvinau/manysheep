@@ -28,7 +28,7 @@ export default {
         position: absolute;
         background-image: url(../assets/floor.jpg);
         background-size: 100% 100%;
-        width: 30%;
+        width: 25%;
         height: 50px;
         border: 1px solid #9E9E9E; // essential for the sheep
     }
