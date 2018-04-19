@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="background">
     <floor 
       v-for="(f, index) in floors" 
       :left="f[0]" 
@@ -26,15 +26,18 @@ export default {
       floors: [
         ['5%', '13%'],
         ['70%', '20%'],
-        ['28%', '38%'],
-        ['60%', '58%'],
-        ['12%', '78%'],
+        ['38%', '34%'],
+        ['9%', '55%'],
+        ['65%', '65%'],
       ],
     };
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss">
+  body {
+    background: url(assets/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+  }
 </style>
