@@ -1,7 +1,7 @@
 {
   "name": "manysheep",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Source Code of ManySheep.com",
   "author": "Kelvin Au <kelvinau4413@hotmail.com>",
   "private": true,
   "scripts": {
