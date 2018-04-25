@@ -12,14 +12,14 @@ export default {
     };
   },
   computed: {
-      positionStyle() {
+    positionStyle() {
         return {
             left: this.left,
             top: this.top,
         }
-      }
+    }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -31,7 +31,7 @@ export default {
         background-size: 100% 100%;
         width: 25%;
         height: $fence-height;
-        border: 1px solid $border-color; // essential for the sheep
+        border: 1px solid $border-color; // essential for esheep
         &:before, &:after {
             position: absolute;
             height: 50%;

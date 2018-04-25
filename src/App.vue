@@ -12,14 +12,25 @@
 
 import Floor from '@/components/floor'
 
+const MAX_NUM_OF_SHEEP = 20;
+
 export default {
   name: "App",
   components: {
     Floor,
   },
   mounted() {
-    let sheep = new eSheep(); 
-    sheep.Start(); 
+    this.addSheep();
+  },
+  methods: {
+    addSheep() {
+      let sheep = new eSheep(); 
+      sheep.Start(); 
+      this.numOfSheep++;
+      if (this.numOfSheep !== MAX_NUM_OF_SHEEP) {
+          setTimeout(this.addSheep, (Math.floor(Math.random() * 10) + 5) * 1000);
+      }
+    },
   },
   data() {
     return {
@@ -30,6 +41,7 @@ export default {
         ['9%', '55%'],
         ['65%', '65%'],
       ],
+      numOfSheep: 0,
     };
   }
 };
