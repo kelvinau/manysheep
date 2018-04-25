@@ -41,7 +41,7 @@ export default {
             border: 1px solid $border-color;
             border-bottom: none;
             transform: translateY(calc(-#{$fence-height} - 1px));
-            background-color: #eee;
+            background: radial-gradient(#eee, #afa9a9);
         }
         &:after {
             right: 0;
