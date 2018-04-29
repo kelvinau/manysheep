@@ -28,7 +28,7 @@ export default {
       sheep.Start(); 
       this.numOfSheep++;
       if (this.numOfSheep !== MAX_NUM_OF_SHEEP) {
-          setTimeout(this.addSheep, (Math.floor(Math.random() * 10) + 5) * 1000);
+          setTimeout(this.addSheep, (Math.floor(Math.random() * 5) + 2) * 1000);
       }
     },
   },
