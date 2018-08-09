@@ -2,9 +2,9 @@
 
 > Source Code of ManySheep.com
 
-<div style="text-align">
+<p style="text-align: center;">
 <img alt="manysheep.com" src="https://kelvinau.github.io/manysheep/manysheep.com.gif">
-</div>
+</p>
 ## Build Setup
 
 ``` bash
