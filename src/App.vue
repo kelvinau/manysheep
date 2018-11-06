@@ -1,8 +1,8 @@
 <template>
   <div class="background">
-    <floor 
-      v-for="(f, index) in floors" 
-      :left="f[0]" 
+    <floor
+      v-for="(f, index) in floors"
+      :left="f[0]"
       :top="f[1]"
       :key="index"></floor>
   </div>
@@ -24,8 +24,8 @@ export default {
   },
   methods: {
     addSheep() {
-      let sheep = new eSheep(); 
-      sheep.Start(); 
+      let sheep = new eSheep({allowPopup: 'no'});
+      sheep.Start();
       this.numOfSheep++;
       if (this.numOfSheep !== MAX_NUM_OF_SHEEP) {
           setTimeout(this.addSheep, (Math.floor(Math.random() * 5) + 2) * 1000);
