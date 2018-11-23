@@ -14,6 +14,7 @@ import Floor from '@/components/floor'
 
 const MAX_NUM_OF_SHEEP = 20;
 
+
 export default {
   name: "App",
   components: {
@@ -24,11 +25,11 @@ export default {
   },
   methods: {
     addSheep() {
-      let sheep = new eSheep({allowPopup: 'no'});
-      sheep.Start();
-      this.numOfSheep++;
-      if (this.numOfSheep !== MAX_NUM_OF_SHEEP) {
-          setTimeout(this.addSheep, (Math.floor(Math.random() * 5) + 2) * 1000);
+      if (this.numOfSheep < MAX_NUM_OF_SHEEP) {
+        let sheep = new eSheep({allowPopup: 'no'});
+        sheep.Start();
+        this.numOfSheep++;
+        setTimeout(this.addSheep, (Math.floor(Math.random() * 5) + 2) * 1000);
       }
     },
   },
