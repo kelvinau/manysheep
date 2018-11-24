@@ -1,5 +1,13 @@
 <template>
   <div class="background">
+    <div class="clear-btn-container">
+      Sheep Spawned: {{sheep.length}}/{{MAX_NUM_OF_SHEEP}}
+      <button
+        @click="addSheep"
+         :disabled="sheep.length >= MAX_NUM_OF_SHEEP">Add Sheep</button>
+      <button
+        @click="clearAllSheep">Kill Them All 😆</button>
+    </div>
     <floor
       v-for="(f, index) in floors"
       :left="f[0]"
@@ -21,17 +29,20 @@ export default {
     Floor,
   },
   mounted() {
-    this.addSheep();
+    setInterval(this.addSheep, (Math.floor(Math.random() * 5) + 2) * 1000);
   },
   methods: {
     addSheep() {
-      if (this.numOfSheep < MAX_NUM_OF_SHEEP) {
+      if (this.sheep.length < MAX_NUM_OF_SHEEP) {
         let sheep = new eSheep({allowPopup: 'no'});
         sheep.Start();
-        this.numOfSheep++;
-        setTimeout(this.addSheep, (Math.floor(Math.random() * 5) + 2) * 1000);
+        this.sheep.push(sheep);
       }
     },
+    clearAllSheep() {
+      this.sheep.forEach((s) => s.remove());
+      this.sheep = [];
+    }
   },
   data() {
     return {
@@ -42,7 +53,8 @@ export default {
         ['15%', '55%'],
         ['60%', '65%'],
       ],
-      numOfSheep: 0,
+      sheep: [],
+      MAX_NUM_OF_SHEEP,
     };
   }
 };
@@ -52,5 +64,13 @@ export default {
   body {
     background: url(assets/background.jpg) no-repeat center center fixed;
     background-size: cover;
+  }
+  .clear-btn-container {
+    text-align: right;
+    button:not([disabled]) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 </style>
