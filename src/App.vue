@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <div class="clear-btn-container">
+    <div class="top-container">
       Sheep Spawned: {{sheep.length}}/{{MAX_NUM_OF_SHEEP}}
       <button
         @click="addSheep"
@@ -34,7 +34,7 @@ export default {
   methods: {
     addSheep() {
       if (this.sheep.length < MAX_NUM_OF_SHEEP) {
-        let sheep = new eSheep({allowPopup: 'no'});
+        const sheep = new eSheep({allowPopup: 'no'});
         sheep.Start();
         this.sheep.push(sheep);
       }
@@ -65,7 +65,7 @@ export default {
     background: url(assets/background.jpg) no-repeat center center fixed;
     background-size: cover;
   }
-  .clear-btn-container {
+  .top-container {
     text-align: right;
     button:not([disabled]) {
       &:hover {
