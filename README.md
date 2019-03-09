@@ -1,6 +1,6 @@
 # manysheep
 
-> Source Code of ManySheep.com
+Demo: https://demo.kelvinau.net/manysheep/
 
 ![manysheep.com](https://kelvinau.github.io/manysheep/manysheep.com.gif)
 
